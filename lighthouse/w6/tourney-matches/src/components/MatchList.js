@@ -15,4 +15,3 @@ function MatchList(props) {
 
 export default MatchList;
 
-// const parsedMatches = matchData.map(match => <Match key={match.matchNumber} {...match} />);
