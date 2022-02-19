@@ -1,16 +1,18 @@
-import playerData from '../data/playerData';
-import matchData from '../data/matchData';
-import { addWinsToPlayer, preparePlayerData } from '../helpers/playerHelpers';
+// import playerData from '../data/playerData';
+// import matchData from '../data/matchData';
+// import { addWinsToPlayer, preparePlayerData } from '../helpers/playerHelpers';
 import Player from './Player';
 
 function PlayerList(props) {
-  const preparedPlayerData = preparePlayerData(playerData);
-  const parsedPlayerData = addWinsToPlayer(preparedPlayerData, matchData);
-  const onePlayer = parsedPlayerData[0];
+  // console.log(props)
+  const preparedPlayerData = props.preparePlayerData(props.playerData);
+  const parsedPlayerData = props.addWinsToPlayer(preparedPlayerData, props.matchData);
+  // const onePlayer = parsedPlayerData[0];
+  const parsedPlayers = parsedPlayerData.map(player => <Player key={player.gamerTag} {...player} />);
   return (
     <section className="PlayerList">
       <h1>Current participating players</h1>
-      <Player {...onePlayer} />
+      {parsedPlayers}
     </section>
   );
 }
