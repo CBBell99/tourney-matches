@@ -5,7 +5,7 @@ import matchData from './data/matchData';
 import playerData from './data/playerData';
 import { preparePlayerData, addWinsToPlayer } from "./helpers/playerHelpers"
 
-function App(props) {
+function App() {
 
   return (
     <div className="App">
