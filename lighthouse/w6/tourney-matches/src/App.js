@@ -6,14 +6,20 @@ import playerData from './data/playerData';
 import { preparePlayerData, addWinsToPlayer } from "./helpers/playerHelpers"
 
 function App() {
+  const playerDataArray = preparePlayerData(playerData);
+  const parsedPlayerData = addWinsToPlayer(playerDataArray, matchData);
 
+  // const preparedPlayerData = preparePlayerData(playerData);
+  // const addWinsToPlayer = addWinsToPlayer(preparedPlayerData, matchData)
   return (
     <div className="App">
       <h1>Tourney Matches <span>Where Coding and Tournaments found thier Match!</span></h1>
       <PlayerList
-        preparePlayerData={preparePlayerData}
-        addWinsToPlayer={addWinsToPlayer}
-        matchData={matchData} playerData={playerData} />
+        parsedPlayerData={parsedPlayerData}
+      // preparePlayerData={preparePlayerData}
+      // addWinsToPlayer={addWinsToPlayer}
+      // matchData={matchData} playerData={playerData}
+      />
       <MatchList matchData={matchData} />
     </div>
   );

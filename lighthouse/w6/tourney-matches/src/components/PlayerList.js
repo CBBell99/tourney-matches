@@ -4,9 +4,9 @@
 import Player from './Player';
 
 function PlayerList(props) {
-  // console.log(props)
-  const preparedPlayerData = props.preparePlayerData(props.playerData);
-  const parsedPlayerData = props.addWinsToPlayer(preparedPlayerData, props.matchData);
+  const { parsedPlayerData } = props
+  // const preparedPlayerData = props.preparePlayerData(props.playerData);
+  // const parsedPlayerData = props.addWinsToPlayer(preparedPlayerData, props.matchData);
   // const onePlayer = parsedPlayerData[0];
   const parsedPlayers = parsedPlayerData.map(player => <Player key={player.gamerTag} {...player} />);
   return (
